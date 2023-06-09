@@ -1,6 +1,6 @@
 import socket
 
-IP = "127.0.0.1"  # localhost
+IP = "192.168.10.128"  # localhost
 PORT = 6000
 SIZE = 1024
 

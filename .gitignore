@@ -254,5 +254,5 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 # TCP AND UDP project testing file
-receive_img.jpeg
-testing_img.jpeg
+network_testing/receive_img.jpeg
+network_testing/testing_img.jpeg
