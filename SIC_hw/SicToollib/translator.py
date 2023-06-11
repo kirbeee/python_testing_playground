@@ -1,13 +1,20 @@
+import re
 class Translator:
     def __init__(self, rawFile):
         self.file = rawFile
         self._LOC = []
         self._STATEMENT = []
         self._OBJ = []
+        self.__analyse(rawFile)
 
-    def analyse(self) -> tuple:
-        pass
-
+    def __analyse(self,file):
+        print(file.readline().split(" "))
+        temp = re.split(' |\n|\t',file.read())
+        temp = [value for value in temp if value != ""]
+        for i in range(len(temp)//6):
+            self._LOC.append(temp[i*6+1])
+            self._STATEMENT.append([temp[i*6+2],temp[i*6+3],temp[i*6+4]])
+            self._OBJ.append(temp[i*6+5])
     def checker(self) -> bool:
         pass
 
@@ -30,9 +37,3 @@ class Translator:
         self.Printer()
 
 
-if __name__ == "__main__":
-    try:
-        with open("testing.txt") as file:
-            Translator(file).Tester()
-    except FileNotFoundError:
-        print("There just not file to translate")
